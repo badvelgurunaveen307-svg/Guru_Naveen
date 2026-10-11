@@ -1,5 +1,6 @@
 import { useChat } from "@ai-sdk/react";
-import { DefaultChatTransport, type ChatStatus, type UIMessage } from "ai";
+import { DefaultChatTransport } from "ai";
+import { motion } from "framer-motion";
 import { MessageSquareText, X } from "lucide-react";
 import { useCallback, useEffect, useMemo, useRef, useState } from "react";
 
@@ -40,11 +41,12 @@ export function ChatAssistant() {
   const { messages, sendMessage, status, stop, regenerate, clearError, error } =
     useChat({ transport });
 
-  const textareaRef = useRef<HTMLTextAreaElement | null>(null);
   const panelRef = useRef<HTMLDivElement | null>(null);
 
   const focusComposer = useCallback(() => {
-    window.requestAnimationFrame(() => textareaRef.current?.focus());
+    window.requestAnimationFrame(() =>
+      panelRef.current?.querySelector("textarea")?.focus(),
+    );
   }, []);
 
   useEffect(() => {
@@ -220,7 +222,6 @@ export function ChatAssistant() {
             onSubmit={onSubmit}
           >
             <PromptInputTextarea
-              ref={textareaRef}
               placeholder="Ask a question…"
               aria-label="Ask a question"
             />
@@ -240,11 +241,7 @@ export function ChatAssistant() {
               </div>
             )}
             <PromptInputFooter className="justify-end pt-2">
-              <PromptInputSubmit
-                status={status as ChatStatus}
-                onStop={stop}
-                disabled={status === "submitted"}
-              />
+              <PromptInputSubmit status={status} onStop={stop} disabled={status === "submitted"} />
             </PromptInputFooter>
           </PromptInput>
         </motion.div>
