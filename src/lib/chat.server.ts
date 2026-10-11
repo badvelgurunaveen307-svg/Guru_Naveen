@@ -31,7 +31,7 @@ const knowledge = [
   "PROJECTS:",
   ...projects.map(
     (project) =>
-      `- ${project.title} (${project.tool}, ${project.date}) — ${project.description} Key work: ${project.points.join("; ")}. Tech: ${project.tech.join(", ")}. Source: ${project.link}`,
+      `- ${project.title} (${project.tool}, ${project.date ?? "date not stated"}) — ${project.description} Key work: ${project.points.join("; ")}. Tech: ${project.tech.join(", ")}. Source: ${project.url}`,
   ),
   "",
   "SKILLS:",
@@ -41,7 +41,7 @@ const knowledge = [
   ...certifications.map((cert) => `- ${cert.title} — ${cert.issuer}, ${cert.date} — ${cert.url}`),
   "",
   "EDUCATION:",
-  ...education.map((entry) => `- ${entry.degree} — ${entry.institution} (${entry.year})`),
+  ...education.map((entry) => `- ${entry.degree} — ${entry.school} (${entry.years})`),
   "",
   "ACHIEVEMENTS:",
   ...achievements.map((item) => `- ${item}`),
@@ -67,7 +67,7 @@ function jsonResponse(body: unknown, status: number) {
 }
 
 export async function handleChat(request: Request): Promise<Response> {
-  const apiKey = process.env.LOVABLE_API_KEY;
+  const apiKey = process.env["LOVABLE_API_KEY"];
   if (!apiKey) {
     return jsonResponse({ error: "The assistant is not available right now." }, 503);
   }

@@ -130,7 +130,7 @@ export function ChatAssistant() {
             </div>
             <Button
               variant="ghost"
-              size="icon-sm"
+              size="icon"
               aria-label="Close assistant"
               onClick={() => setOpen(false)}
             >
@@ -216,10 +216,7 @@ export function ChatAssistant() {
                   </p>
                   <button
                     className="mt-1 font-bold underline underline-offset-4"
-                    onClick={() => {
-                      clearError();
-                      void regenerate();
-                    }}
+                    onClick={retry}
                     type="button"
                   >
                     Try again
