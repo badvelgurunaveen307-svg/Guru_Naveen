@@ -8,6 +8,7 @@ import { About, Achievements, Certifications, Contact, Education, Skills } from 
 import { ProjectModal, ProjectRow } from "@/components/portfolio/Projects";
 import { profile, projects, type Project } from "@/data/portfolio";
 import photo from "@/assets/guru.png.asset.json";
+import { ChatAssistant } from "@/components/portfolio/ChatAssistant";
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -167,6 +168,7 @@ function Browse({ start, who, onSwitch }: { start: string; who: string; onSwitch
         © {new Date().getFullYear()} {profile.name}. All rights reserved.
       </footer>
       <ProjectModal project={open} onClose={() => setOpen(null)} />
+      <ChatAssistant />
     </motion.div>
   );
 }
