@@ -258,6 +258,7 @@ export function ChatAssistant() {
       <motion.button
         animate={open ? { opacity: 0, scale: 0.9 } : { opacity: 1, scale: 1 }}
         className={`fixed right-4 bottom-4 z-50 flex items-center gap-2 rounded-full bg-primary px-4 py-3 font-bold text-primary-foreground shadow-lg transition hover:opacity-90 sm:right-6 sm:bottom-6 ${open ? "pointer-events-none" : ""}`}
+        aria-label="Ask about my work"
         onClick={() => setOpen((value) => !value)}
         type="button"
       >
