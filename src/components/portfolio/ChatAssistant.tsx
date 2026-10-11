@@ -84,6 +84,19 @@ export function ChatAssistant() {
     [onSubmit],
   );
 
+  const retry = useCallback(() => {
+    clearError();
+    const last = messages.at(-1);
+    if (last?.role === "assistant") {
+      void regenerate();
+      return;
+    }
+    if (last?.role === "user") {
+      const text = last.parts.find((part) => part.type === "text")?.text;
+      if (text) void sendMessage({ text, messageId: last.id });
+    }
+  }, [clearError, messages, regenerate, sendMessage]);
+
   const busy = status === "submitted" || status === "streaming";
 
   return (
