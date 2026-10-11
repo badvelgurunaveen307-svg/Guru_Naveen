@@ -23,7 +23,6 @@ import {
 } from "@/components/ai-elements/prompt-input";
 import { Shimmer } from "@/components/ai-elements/shimmer";
 import { Button } from "@/components/ui/button";
-import { profile } from "@/data/portfolio";
 import assistantMark from "@/assets/chat-assistant.png";
 
 const suggestions = [
@@ -124,8 +123,7 @@ export function ChatAssistant() {
                 Portfolio Assistant
               </p>
               <p className="truncate text-xs text-muted-foreground">
-                Ask about {profile.name.split(" ")[0]}'s projects, skills and
-                certifications
+                Projects, skills, certifications
               </p>
             </div>
             <Button
@@ -162,7 +160,7 @@ export function ChatAssistant() {
                   <MessageContent
                     className={
                       message.role === "user"
-                        ? "bg-primary text-primary-foreground"
+                        ? "group-[.is-user]:bg-primary group-[.is-user]:text-primary-foreground"
                         : undefined
                     }
                   >
