@@ -118,7 +118,7 @@ export const skills: { group: string; items: string[] }[] = [
 ];
 
 export const certifications = [
-  { title: "Data Science", issuer: "Internshala Training", date: "Feb 2026 – Sep 2026", detail: "Intro to Data Analytics; SQL for Data Analysis; Power BI; MS Excel; Python Data Preparation & Analysis", url: "https://trainings.internshala.com/s/v/3918178/f7518cfc", image: undefined },
+  { title: "Data Science", issuer: "Internshala Training", date: "Feb 2026 – Sep 2026", detail: "Intro to Data Analytics; SQL for Data Analysis; Power BI; MS Excel; Python Data Preparation & Analysis", url: "https://trainings.internshala.com/s/v/3989579/245f4da3", image: undefined },
   { title: "Introduction to Data Analysis Using Python", issuer: "Google · Coursera", date: "May 2026 – Jun 2026", url: "https://coursera.org/share/5748bafb5bfa47e865395fe6e4e280da", image: undefined },
   { title: "Data Fundamentals", issuer: "IBM SkillsBuild", date: "Apr 2026", url: "https://www.credly.com/badges/32e77fa3-7fa5-4186-9afd-911ff5b958a2", image: undefined },
   { title: "Data Analytics", issuer: "ExcelR", date: "May 2025 – Sep 2025", url: "https://i.postimg.cc/4yHcqJb9/excel-R.png", image: undefined },
