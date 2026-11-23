@@ -5,6 +5,23 @@ import { Award, GraduationCap, Mail, Phone, Briefcase, Trophy, Send, Loader2, Ex
 import { Button } from "@/components/ui/button";
 import { profile, skills, certifications, education, achievements, emailConfig } from "@/data/portfolio";
 import photo from "@/assets/guru.png.asset.json";
+import formalPortrait from "@/assets/portraits/formal_portrait.png.asset.json";
+import studioPortrait from "@/assets/portraits/studio_portrait.png.asset.json";
+import workspacePortrait from "@/assets/portraits/workspace_portrait.png.asset.json";
+import outdoorPortrait from "@/assets/portraits/outdoor_blazer.png.asset.json";
+import seatedPortrait from "@/assets/portraits/seated_portrait.png.asset.json";
+import crossedArmsPortrait from "@/assets/portraits/crossed_arms_portrait.png.asset.json";
+import casualPortrait from "@/assets/portraits/casual_hoodie_portrait.png.asset.json";
+
+const portraitGallery = [
+  { src: formalPortrait.url, alt: "Guru Naveen Badvel in a formal studio portrait" },
+  { src: studioPortrait.url, alt: "Guru Naveen Badvel in a close-up studio portrait" },
+  { src: workspacePortrait.url, alt: "Guru Naveen Badvel in a thoughtful workspace pose" },
+  { src: outdoorPortrait.url, alt: "Guru Naveen Badvel outdoors wearing a blazer" },
+  { src: seatedPortrait.url, alt: "Guru Naveen Badvel seated in a casual pose" },
+  { src: crossedArmsPortrait.url, alt: "Guru Naveen Badvel standing with arms crossed" },
+  { src: casualPortrait.url, alt: "Guru Naveen Badvel wearing a casual hoodie" },
+];
 
 function Section({ id, title, children }: { id: string; title: string; children: ReactNode }) {
   return (
@@ -25,13 +42,20 @@ function Section({ id, title, children }: { id: string; title: string; children:
 export function About() {
   return (
     <Section id="about" title="About Me">
-      <div className="grid items-center gap-10 md:grid-cols-[280px_1fr]">
-        <img src={photo.url} alt="Guru Naveen Badvel portrait" className="aspect-[3/4] w-full max-w-[280px] rounded-md object-cover grayscale shadow-glow" />
-        <div>
-          <p className="max-w-3xl text-lg leading-relaxed text-muted-foreground">{profile.summary}</p>
-          <p className="mt-4 text-sm uppercase tracking-widest text-primary">{profile.location}</p>
+      <>
+        <div className="grid items-center gap-10 md:grid-cols-[280px_1fr]">
+          <img src={photo.url} alt="Guru Naveen Badvel portrait" className="aspect-[3/4] w-full max-w-[280px] rounded-md object-cover grayscale shadow-glow" />
+          <div>
+            <p className="max-w-3xl text-lg leading-relaxed text-muted-foreground">{profile.summary}</p>
+            <p className="mt-4 text-sm uppercase tracking-widest text-primary">{profile.location}</p>
+          </div>
         </div>
-      </div>
+        <div role="group" aria-label="Additional portraits of Guru Naveen Badvel" className="mt-10 grid scroll-mt-24 grid-cols-2 gap-3 sm:grid-cols-3 lg:grid-cols-4">
+          {portraitGallery.map(({ src, alt }) => (
+            <img key={src} src={src} alt={alt} loading="lazy" decoding="async" className="aspect-[3/4] w-full rounded-md object-cover object-top grayscale shadow-glow transition duration-300 hover:grayscale-0" />
+          ))}
+        </div>
+      </>
     </Section>
   );
 }

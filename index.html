@@ -62,6 +62,11 @@ section>h2{font-size:clamp(2.2rem,5vw,3rem);margin-bottom:24px}
 .pc:hover{transform:scale(1.04);border-color:var(--red)}
 .pc small{color:var(--red);font-weight:700}.pc h4{margin:6px 0;font-size:1.05rem}.pc p{color:var(--muted);font-size:.85rem}
 .grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:16px}
+.portrait-gallery{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px;margin-top:32px;scroll-margin-top:88px}
+.portrait-gallery img{display:block;width:100%;aspect-ratio:3/4;object-fit:cover;object-position:top;border-radius:6px;filter:grayscale(1);transition:filter .3s}
+.portrait-gallery img:hover{filter:grayscale(0)}
+@media(min-width:640px){.portrait-gallery{grid-template-columns:repeat(3,minmax(0,1fr))}}
+@media(min-width:1024px){.portrait-gallery{grid-template-columns:repeat(4,minmax(0,1fr))}}
 .card{background:var(--card);border:1px solid var(--border);border-radius:6px;padding:20px}
 #downloadResume{background:var(--red);color:var(--fg)}
 .certificate-action{margin-top:16px;border:1px solid var(--border);padding:8px 12px;font-size:.85rem;color:var(--fg)}
@@ -124,7 +129,17 @@ footer{border-top:1px solid var(--border);padding:32px 5vw;text-align:center;col
     <div id="projRows"></div>
   </section>
   <section id="about"><h2 class="display">About</h2><p id="aboutTxt" style="max-width:760px;color:var(--muted)"></p>
-    <p style="margin-top:16px">📍 Bengaluru, India</p></section>
+    <p style="margin-top:16px">📍 Bengaluru, India</p>
+    <div class="portrait-gallery" aria-label="Additional portraits of Guru Naveen Badvel">
+      <img src="https://id-preview--2bd5a100-8597-4d17-b3e1-6c7a4a6337e9.lovable.app/__l5e/assets-v1/c7508362-36eb-4338-9f91-da6e4e125134/formal_portrait.png" alt="Guru Naveen Badvel in a formal studio portrait" loading="lazy" decoding="async">
+      <img src="https://id-preview--2bd5a100-8597-4d17-b3e1-6c7a4a6337e9.lovable.app/__l5e/assets-v1/51d02d72-c46e-4f01-8eeb-182a06a862bd/studio_portrait.png" alt="Guru Naveen Badvel in a close-up studio portrait" loading="lazy" decoding="async">
+      <img src="https://id-preview--2bd5a100-8597-4d17-b3e1-6c7a4a6337e9.lovable.app/__l5e/assets-v1/7e3ae767-d5ce-45fa-bdc8-6cacbe776862/workspace_portrait.png" alt="Guru Naveen Badvel in a thoughtful workspace pose" loading="lazy" decoding="async">
+      <img src="https://id-preview--2bd5a100-8597-4d17-b3e1-6c7a4a6337e9.lovable.app/__l5e/assets-v1/acea4840-1cdd-421b-babd-84bdd54c9c35/outdoor_blazer.png" alt="Guru Naveen Badvel outdoors wearing a blazer" loading="lazy" decoding="async">
+      <img src="https://id-preview--2bd5a100-8597-4d17-b3e1-6c7a4a6337e9.lovable.app/__l5e/assets-v1/04098d93-ec43-4cdb-acf1-9ee8dd07ac54/seated_portrait.png" alt="Guru Naveen Badvel seated in a casual pose" loading="lazy" decoding="async">
+      <img src="https://id-preview--2bd5a100-8597-4d17-b3e1-6c7a4a6337e9.lovable.app/__l5e/assets-v1/f310d2c4-4538-46f8-9e95-8bbfbee83b53/crossed_arms_portrait.png" alt="Guru Naveen Badvel standing with arms crossed" loading="lazy" decoding="async">
+      <img src="https://id-preview--2bd5a100-8597-4d17-b3e1-6c7a4a6337e9.lovable.app/__l5e/assets-v1/9e49b4da-0bd3-4db7-bc84-d0174d9c30c4/casual_hoodie_portrait.png" alt="Guru Naveen Badvel wearing a casual hoodie" loading="lazy" decoding="async">
+    </div>
+  </section>
   <section id="skills"><h2 class="display">Skills</h2><div class="grid" id="skillGrid"></div></section>
   <section id="certifications"><h2 class="display">Certifications</h2><div class="grid" id="certGrid"></div></section>
   <section id="education"><h2 class="display">Education</h2><div class="grid" id="eduGrid"></div></section>
