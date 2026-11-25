@@ -1,4 +1,5 @@
 # Portfolio updates
+- [x] Replace the About portrait and hero image with the two latest uploads; remove the extra portrait gallery in both portfolio versions and verify.
 - [x] Add four verified certification actions and the ExcelR image in both portfolio versions.
 - [x] Store the newly uploaded resume asset with view and direct-download actions.
 - [x] Correct the existing portrait composition on mobile without changing desktop appearance.

@@ -7,7 +7,7 @@ import { downloadResume, resume } from "@/lib/resume";
 import { About, Achievements, Certifications, Contact, Education, Skills } from "@/components/portfolio/Sections";
 import { ProjectModal, ProjectRow } from "@/components/portfolio/Projects";
 import { profile, projects, type Project } from "@/data/portfolio";
-import photo from "@/assets/guru.png.asset.json";
+import heroPortrait from "@/assets/hero_portrait.png.asset.json";
 import { ChatAssistant } from "@/components/portfolio/ChatAssistant";
 
 export const Route = createFileRoute("/")({
@@ -127,7 +127,7 @@ function Browse({ start, who, onSwitch }: { start: string; who: string; onSwitch
       </AnimatePresence>
 
       <section className="portfolio-hero relative flex min-h-[90vh] items-end overflow-hidden">
-        <img src={photo.url} alt="Guru Naveen Badvel portrait" className="hero-portrait absolute right-0 top-0 h-full w-full object-contain object-center opacity-75 grayscale md:w-1/2 md:object-right" />
+        <img src={heroPortrait.url} alt="Guru Naveen Badvel portrait" className="hero-portrait absolute right-0 top-0 h-full w-full object-contain object-center opacity-75 grayscale md:w-1/2 md:object-right" />
         <div className="absolute inset-0 hidden bg-side md:block" />
         <div className="absolute inset-0 hidden bg-fade md:block" />
         <motion.div initial={{ x: -40, opacity: 0 }} animate={{ x: 0, opacity: 1 }} transition={{ delay: 0.3, duration: 0.8 }} className="hero-copy relative z-10 max-w-2xl px-6 pb-20 pt-28 md:px-14">

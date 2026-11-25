@@ -40,6 +40,8 @@ header input{background:rgba(0,0,0,.5);border:1px solid var(--border);color:var(
 .hero img{position:absolute;right:0;top:0;height:100%;width:55%;object-fit:contain;object-position:right;opacity:.75;filter:grayscale(1)}
 .hero:before{content:"";position:absolute;inset:0;background:linear-gradient(90deg,#141414 35%,transparent 80%),linear-gradient(0deg,#141414,transparent 40%);z-index:1}
 .hero .t{position:relative;z-index:2;max-width:700px;padding:110px 5vw 80px}
+.about-grid{display:grid;grid-template-columns:minmax(0,280px) minmax(0,1fr);align-items:center;gap:40px}
+.about-photo{display:block;width:100%;max-width:280px;aspect-ratio:3/4;object-fit:cover;filter:grayscale(1);border-radius:6px}
 .eyebrow{color:var(--red);font-weight:800;font-size:.85rem;letter-spacing:.3em;text-transform:uppercase}
 .hero h1{font-size:clamp(3.5rem,9vw,6.5rem);line-height:1;margin-top:8px}
 .hero p.sum{color:var(--muted);margin-top:12px}
@@ -51,6 +53,7 @@ header input{background:rgba(0,0,0,.5);border:1px solid var(--border);color:var(
 .hero img{position:relative;inset:auto;display:block;width:min(calc(100% - 48px),340px);height:auto;margin-inline:auto;object-fit:contain;object-position:center;opacity:.75}
 .hero:before{display:none}
 .hero .t{padding-top:24px;padding-bottom:40px}
+.about-grid{grid-template-columns:1fr;gap:24px}
 header{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:12px;padding-inline:16px}
 header .r{min-width:0;gap:8px}header input{width:110px}.who{max-width:100px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
 }
@@ -62,11 +65,6 @@ section>h2{font-size:clamp(2.2rem,5vw,3rem);margin-bottom:24px}
 .pc:hover{transform:scale(1.04);border-color:var(--red)}
 .pc small{color:var(--red);font-weight:700}.pc h4{margin:6px 0;font-size:1.05rem}.pc p{color:var(--muted);font-size:.85rem}
 .grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:16px}
-.portrait-gallery{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px;margin-top:32px;scroll-margin-top:88px}
-.portrait-gallery img{display:block;width:100%;aspect-ratio:3/4;object-fit:cover;object-position:top;border-radius:6px;filter:grayscale(1);transition:filter .3s}
-.portrait-gallery img:hover{filter:grayscale(0)}
-@media(min-width:640px){.portrait-gallery{grid-template-columns:repeat(3,minmax(0,1fr))}}
-@media(min-width:1024px){.portrait-gallery{grid-template-columns:repeat(4,minmax(0,1fr))}}
 .card{background:var(--card);border:1px solid var(--border);border-radius:6px;padding:20px}
 #downloadResume{background:var(--red);color:var(--fg)}
 .certificate-action{margin-top:16px;border:1px solid var(--border);padding:8px 12px;font-size:.85rem;color:var(--fg)}
@@ -108,7 +106,7 @@ footer{border-top:1px solid var(--border);padding:32px 5vw;text-align:center;col
   </header>
 
   <div class="hero">
-    <img src="public/guru.png" alt="Guru Naveen Badvel">
+    <img src="https://id-preview--2bd5a100-8597-4d17-b3e1-6c7a4a6337e9.lovable.app/__l5e/assets-v1/c7702589-5c7b-4d2d-b922-176c009d2a4e/hero_portrait.png" alt="Guru Naveen Badvel">
     <div class="t">
       <p class="eyebrow">A Data Analyst Original</p>
       <h1 class="display">Guru Naveen Badvel</h1>
@@ -128,16 +126,12 @@ footer{border-top:1px solid var(--border);padding:32px 5vw;text-align:center;col
     <h2 class="display">Projects</h2>
     <div id="projRows"></div>
   </section>
-  <section id="about"><h2 class="display">About</h2><p id="aboutTxt" style="max-width:760px;color:var(--muted)"></p>
-    <p style="margin-top:16px">📍 Bengaluru, India</p>
-    <div class="portrait-gallery" aria-label="Additional portraits of Guru Naveen Badvel">
-      <img src="https://id-preview--2bd5a100-8597-4d17-b3e1-6c7a4a6337e9.lovable.app/__l5e/assets-v1/c7508362-36eb-4338-9f91-da6e4e125134/formal_portrait.png" alt="Guru Naveen Badvel in a formal studio portrait" loading="lazy" decoding="async">
-      <img src="https://id-preview--2bd5a100-8597-4d17-b3e1-6c7a4a6337e9.lovable.app/__l5e/assets-v1/51d02d72-c46e-4f01-8eeb-182a06a862bd/studio_portrait.png" alt="Guru Naveen Badvel in a close-up studio portrait" loading="lazy" decoding="async">
-      <img src="https://id-preview--2bd5a100-8597-4d17-b3e1-6c7a4a6337e9.lovable.app/__l5e/assets-v1/7e3ae767-d5ce-45fa-bdc8-6cacbe776862/workspace_portrait.png" alt="Guru Naveen Badvel in a thoughtful workspace pose" loading="lazy" decoding="async">
-      <img src="https://id-preview--2bd5a100-8597-4d17-b3e1-6c7a4a6337e9.lovable.app/__l5e/assets-v1/acea4840-1cdd-421b-babd-84bdd54c9c35/outdoor_blazer.png" alt="Guru Naveen Badvel outdoors wearing a blazer" loading="lazy" decoding="async">
-      <img src="https://id-preview--2bd5a100-8597-4d17-b3e1-6c7a4a6337e9.lovable.app/__l5e/assets-v1/04098d93-ec43-4cdb-acf1-9ee8dd07ac54/seated_portrait.png" alt="Guru Naveen Badvel seated in a casual pose" loading="lazy" decoding="async">
-      <img src="https://id-preview--2bd5a100-8597-4d17-b3e1-6c7a4a6337e9.lovable.app/__l5e/assets-v1/f310d2c4-4538-46f8-9e95-8bbfbee83b53/crossed_arms_portrait.png" alt="Guru Naveen Badvel standing with arms crossed" loading="lazy" decoding="async">
-      <img src="https://id-preview--2bd5a100-8597-4d17-b3e1-6c7a4a6337e9.lovable.app/__l5e/assets-v1/9e49b4da-0bd3-4db7-bc84-d0174d9c30c4/casual_hoodie_portrait.png" alt="Guru Naveen Badvel wearing a casual hoodie" loading="lazy" decoding="async">
+  <section id="about"><h2 class="display">About</h2>
+    <div class="about-grid">
+      <img class="about-photo" src="https://id-preview--2bd5a100-8597-4d17-b3e1-6c7a4a6337e9.lovable.app/__l5e/assets-v1/38a31aa9-d991-44cd-98ac-5d5756865364/bio_portrait.png" alt="Guru Naveen Badvel portrait" loading="lazy" decoding="async">
+      <div><p id="aboutTxt" style="max-width:760px;color:var(--muted)"></p>
+        <p style="margin-top:16px">📍 Bengaluru, India</p>
+      </div>
     </div>
   </section>
   <section id="skills"><h2 class="display">Skills</h2><div class="grid" id="skillGrid"></div></section>
