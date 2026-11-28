@@ -27,7 +27,7 @@ export function About() {
     <Section id="about" title="About Me">
       <>
         <div className="grid items-center gap-10 md:grid-cols-[280px_1fr]">
-          <img src={bioPortrait.url} alt="Guru Naveen Badvel portrait" className="aspect-[3/4] w-full max-w-[280px] rounded-md object-cover grayscale shadow-glow" />
+          <img src={bioPortrait.url} alt="Guru Naveen Badvel portrait" className="aspect-[3/4] w-full max-w-[280px] rounded-md object-cover shadow-glow" />
           <div>
             <p className="max-w-3xl text-lg leading-relaxed text-muted-foreground">{profile.summary}</p>
             <p className="mt-4 text-sm uppercase tracking-widest text-primary">{profile.location}</p>
